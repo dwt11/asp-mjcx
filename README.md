@@ -10,9 +10,10 @@
 
 # 图片
 
-<img src="https://github.com/dwt11/asp-device/blob/main/demo-pic/1.jpg"/>
-<img src="https://github.com/dwt11/asp-device/blob/main/demo-pic/2.jpg"/>
-<img src="https://github.com/dwt11/asp-device/blob/main/demo-pic/3.jpg"/>
-<img src="https://github.com/dwt11/asp-device/blob/main/demo-pic/4.jpg"/>
-<img src="https://github.com/dwt11/asp-device/blob/main/demo-pic/5.jpg"/>
-<img src="https://github.com/dwt11/asp-device/blob/main/demo-pic/6.jpg"/>
+<img src="https://github.com/dwt11/asp-mjcx/blob/main/demo-pic/1.jpg"/>
+<img src="https://github.com/dwt11/asp-mjcx/blob/main/demo-pic/2.jpg"/>
+<img src="https://github.com/dwt11/asp-mjcx/blob/main/demo-pic/3.jpg"/>
+<img src="https://github.com/dwt11/asp-mjcx/blob/main/demo-pic/4.jpg"/>
+<img src="https://github.com/dwt11/asp-mjcx/blob/main/demo-pic/5.jpg"/>
+<img src="https://github.com/dwt11/asp-mjcx/blob/main/demo-pic/6.jpg"/>
+         
