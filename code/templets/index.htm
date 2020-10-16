@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>门禁查询</title>
+<link rel="stylesheet" type="text/css" href="css/css.css">
+</head>
+<body>
+<?php 
+
+$keyword=$q;
+?>
+<div id="logo">门禁查询</div>
+<div id="main">
+  <form action="?" class="empty">
+    <div id="search-box">
+      <div id="input-container">
+        <input type="text" name="q" id="q" class="q" autocomplete="off" x-webkit-speech="" <?php if($keyword!="") echo "value='".$keyword."'";?>>
+        <div class="search-box-reset"></div>
+      </div>
+      <input type="submit" id="search-button" value="搜 索">
+    </div>
+    <div class="suggest-container">
+      <div class="suggest-content"></div>
+      <div class="suggest-toolbar">
+        <div class="suggest-clearhistory">清除历史记录</div>
+        <div class="fill-all"></div>
+        <div class="suggest-close">关闭</div>
+      </div>
+    </div>
+  </form>
+  <div id="nav" class=""> </div>
+</div>
+<?php 
+
+if($keyword!=""){
+    $whereSql =" where 1=1 ";
+    if($keyword != '')
+    {
+        $whereSql .= " AND (empname LIKE '%$keyword%' or empid LIKE '%$keyword%') ";
+    }
+    
+    $strreturn="";
+    $query = "SELECT * FROM `dede_emp`  $whereSql order by empid asc limit 0,10";
+            $dsql->SetQuery($query);
+            $dsql->Execute();
+           
+          // echo $query;
+            $rownumb=$dsql-> GetTotalRow();
+            if ($rownumb<0||$rownumb==0 ){
+                echo "<strong>未找到相关记录!</strong>";
+            }else{    
+            
+                      echo "<br>找到<strong>".$rownumb."</strong>条记录<br>";
+                      while($row=$dsql->GetObject())
+                      {
+                      
+                      ?>
+<table width="90%" border="0" align="center"  class='border' >
+  <tr>
+    <td width="30%" align="center" valign="middle">
+    
+    
+
+		<?php echo getface($row->face)?>
+	
+   
+
+    
+    
+    
+    
+    </td>
+    <td width="50%"><table width="98%"  border="0">
+        <tr>
+          <td width="47%" align="left">职工编号:&nbsp;&nbsp;<strong><?php echo $row->empid?></strong></td>
+        </tr>
+        <tr>
+          <td width="47%" align="left">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名:&nbsp;&nbsp;<strong><?php echo $row->empname?></strong></td>
+        </tr>
+        <tr>
+          <td align="left">性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别:&nbsp;&nbsp;<strong><?php echo $row->sex?></strong></td>
+        </tr>
+        <tr>
+          <td align="left">部&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;门:&nbsp;&nbsp;<strong><?php echo GetDepname( $row->depid)?></strong></td>
+        </tr>
+<!--        <tr>
+          <td align="left">更新日期:&nbsp;&nbsp;<strong><?php echo GetDateMk( $row->updatedate)?></strong></td>
+        </tr>
+-->      </table></td>
+      
+          <td width="20%" align="center" valign="middle">
+    
+    
+
+		<a href="?dopost=save&empid=<?php echo $row->id?>">记录</a>
+	
+   
+
+    
+    
+    
+    
+    </td>
+  </tr>
+</table>
+<br>
+<?php        }
+          }
+
+}?>
+<div id="footer">
+  <div id="cp" style="word-break:break-all;"><span>Copyright&nbsp;&copy; 集团有限公司</span></div>
+  <a href="exit.php">退出</a> </div>
+ <script>var exp=new RegExp("(?:;)?"+encodeURIComponent("d_shadow")+"=([^;]*);?");exp.test(document.cookie)&&(document.querySelector("#nav .novel").style.display="block")</script>
+<script>document.addEventListener("DOMContentLoaded",function(){window.scrollTo(0,1)},!1),document.getElementById("nav").className=/iphone|ipad|ipod|ios/gi.test(navigator.userAgent)?"iphone":"",function(){var e=navigator.userAgent.toLowerCase();e.indexOf("360 aphone")<0&&e.indexOf("android")>=0&&(document.getElementById("se").style.display="block")}();var qs=document.getElementsByClassName("q");for(var i=qs.length-1;i>=0;i--)qs[i].addEventListener("input",function(){this.value.length===0?this.form.classList.add("empty"):this.form.classList.remove("empty")},!1),qs[i].addEventListener("focus",function(){this.form.classList.add("focusing")},!1),qs[i].addEventListener("blur",function(){this.form.classList.remove("focusing")},!1);var resets=document.getElementsByClassName("search-box-reset");for(var i=resets.length-1;i>=0;i--)resets[i].addEventListener("touchstart",function(){var e=this.parentNode.getElementsByClassName("q")[0];e.value="",e.form.classList.add("empty"),event.preventDefault(),event.stopPropagation()},!1)</script>
+<script src="/js/jquery.min.js"></script>
+<script src="./css/js.js"></script> 
+<script>new Suggest({elements:{input:document.getElementById("q"),wrap:document.forms[0]}})</script>
+    <script type="text/javascript" src="/js/jquery.magnifier.js"></script>
+
+</body>
+</html>

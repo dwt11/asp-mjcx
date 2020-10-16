@@ -1,0 +1,8 @@
+<menu:item ico="images/manage1.gif" link="public_guide.php" title="内容发布" />
+<menu:item ico="images/addnews.gif" link="member_main.php" title="会员列表" />
+<menu:item ico="images/addnews.gif" link="member_operations_money.php?search_type=archive" title="消费记录" />
+<menu:item ico="images/manage1.gif" link="friendlink_main.php" title="友情连接" />
+<menu:item ico="images/file_dir.gif" link="makehtml_homepage.php" title="更新主页" />
+<menu:item ico="images/file_dir.gif" link="makehtml_list.php" title="更新部门" />
+<menu:item ico="images/file_dir.gif" link="co_url.php" title="采集临时内容" />
+<menu:item ico="images/file_dir.gif" link="templets_main.php" title="模板管理" />

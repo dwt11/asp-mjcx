@@ -1,0 +1,9 @@
+查询当前生成项目包含的表信息
+>>dede>>
+{dede:tablelist  row='4' if=''}
+[field:field_name/]
+{/dede:loop}
+>>dede>>
+row = ''  返回结果的条数，为空则全部返回
+if = '' 查询的条件
+

@@ -1,0 +1,11 @@
+查询当前生成表包含的字段信息
+>>dede>>
+{dede:fieldlist  row='4' if=''}
+[field:field_name/]
+{/dede:loop}
+>>dede>>
+row = ''  返回结果的条数，为空则全部返回
+if = '' 查询的条件
+issearch="1" 如果等于1，则显示搜索表单
+iselementvalue="1" 如果等于1，则不输出表单元素的获取值的代码,在添加页面模板中使用
+idischeckbox="1" 如果是主键并idischeckbox为1刚输出多选框
